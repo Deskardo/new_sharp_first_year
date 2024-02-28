@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lesson3
 {
-    internal class Woman : Person
+    internal class Woman : Person, IBabySitter
     {
         protected override string HelloPhrase => "Привет, я - женщина";
         public bool HasMakeup { get; private set; } = false;
@@ -36,6 +36,17 @@ namespace lesson3
         public override void SayHello()
         {
             Console.WriteLine($"Привет, я - женщина. Имя мне - {this.Name}");
+        }
+
+        protected override void TakeCareImplementation()
+        {
+                Console.WriteLine("hello, my child");
+        }
+
+        void IBabySitter.TakeCare()
+        {
+            if(Children != null)
+                Console.WriteLine("hello, I'm Your BabySitter");
         }
     }
 }

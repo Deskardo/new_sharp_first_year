@@ -41,5 +41,10 @@ namespace lesson3
         {
             Console.WriteLine("Скрытый метод ");
         }
+
+        protected override void TakeCareImplementation()
+        {
+                Console.WriteLine("Write notation");
+        }
     }
 }
